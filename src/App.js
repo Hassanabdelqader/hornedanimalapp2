@@ -6,11 +6,11 @@ import HornedBeast from "./HornedBeast";
 
 
 function App() {
-  let descriptionMusk =`Musk oxen live in the frozen Arctic and roam the tundra in search of the roots, mosses, and lichens that sustain them. In winter, they use their hooves to dig through snow to graze on these plants. During the summer, they supplement their diet with Arctic flowers and grasses, often feeding near water`;
+  let descriptionMusk = `Musk oxen live in the frozen Arctic and roam the tundra in search of the roots, mosses, and lichens that sustain them. In winter, they use their hooves to dig through snow to graze on these plants. During the summer, they supplement their diet with Arctic flowers and grasses, often feeding near water`;
 
-  let descriptionBuffalo =`The name buffalo is applied to several different cud-chewing (ruminant) mammals of the ox family (Bovidae). The true, or Indian, buffalo (Bubalus bubalis), also known as water buffalo, or arna, exists both as a wild and domestic animal`;
+  let descriptionBuffalo = `The name buffalo is applied to several different cud-chewing (ruminant) mammals of the ox family (Bovidae). The true, or Indian, buffalo (Bubalus bubalis), also known as water buffalo, or arna, exists both as a wild and domestic animal`;
 
-  let arr =[{
+  let arr = [{
     "_id": 1,
     "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
     "title": "UniWhal",
@@ -35,37 +35,31 @@ function App() {
     "description": "Someone wearing a very silly unicorn head mask",
     "keyword": "unicorn",
     "horns": 1
-}]
+  }]
 
-const rendered= [];
+  const rendered = [];
 
-arr.forEach(element => {
+  arr.forEach(element => {
 
-  rendered.push(<HornedBeast title ={element.title} imageUrl={element.image_url} description= {element.description} />);
-  rendered.push(<hr/>);
-});
+    rendered.push(<HornedBeast title={element.title} imageUrl={element.image_url} description={element.description} />);
+    rendered.push(<hr />);
+  });
 
-  
+
   return (
     <div className="App">
       <header className="App-header">
-      <Header />
+        <Header />
       </header>
+      <main className='Main'>
 
-     <main className='Main'>
-      
-    <HornedBeast title ={'musk ox'} imageUrl={'./file.jpg'} description= {descriptionMusk} />
-    <HornedBeast title ={'Buffalo'} imageUrl={'./buffalo.jpg'} description= {descriptionBuffalo} />
-    <div>
-    {
-  rendered
-  }
-  </div>
-     </main>
-
-     <footer className='footer'>
-      <Footer value={'Hasaan'} />
-     </footer>
+        {
+          rendered
+        }
+      </main>
+      <footer className='footer'>
+        <Footer value={'Hasaan'} />
+      </footer>
     </div>
   );
 }
