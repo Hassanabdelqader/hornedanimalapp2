@@ -1,10 +1,13 @@
-body{
+body {}
 
+
+.card {
+    text-align: center;
+    margin: 1em;
 }
 
+.card-title:hover {
 
-.card{
-
-text-align: center;
-margin: 1em;
+    color: red !important;
 }
+
