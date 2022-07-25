@@ -31,7 +31,6 @@ Finish time: 7: 16 Pm
 
 Actual time needed to complete: 16 minutes
 
-
 Number and name of feature: Feature #4: Stretch Goal: Add Interaction
 
 Estimate of time needed to complete: 15 minutes

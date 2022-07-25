@@ -15,9 +15,10 @@ function App() {
   console.log(jsonData);
   const rendered = [];
 
-  jsonData.forEach(element => {
+  jsonData.forEach((element ,index)=> {
 
-    rendered.push(<HornedBeast title={element.title} imageUrl={element.image_url} description={element.description} />);
+    rendered.push(<HornedBeast title={element.title} imageUrl={element.image_url} description={element.description} 
+      key={index}/>);
 
   });
 
