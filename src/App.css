@@ -1,14 +1,18 @@
 body{
-  background-color: black;
-  color: white;
+
 }
 .App {
-  text-align: center;
+ background-color: grey;
  
 }
-
-.App-link {
-  color: #61dafb;
+main{
+ 
+}
+.cardDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding:1em ;
 }
 
 
