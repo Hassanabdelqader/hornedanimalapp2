@@ -16,7 +16,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       flag: false,
-      selectedBeast: "",
+      selectedBeast2: "",
 
     }
   }
@@ -24,7 +24,7 @@ class App extends React.Component {
 
   selectedItem = (item) => {
     this.setState({
-      selectedBeast: item
+      selectedBeast2: item
     });
   }
   handler = (f) => {
@@ -39,11 +39,11 @@ class App extends React.Component {
         <header className="App-header">
           <Header />
         </header>
-        <main className='Main' selectedBeast={this.selectedItem} showModal={this.handler}>
+        <main className='Main' showModal={this.handler}>
 
-            <SelectedBeast jsonData2={jsonData} closedFlage={this.handler} runValue={this.state.flag} oneDiv={this.selectedItem} />
+            <SelectedBeast jsonData2={jsonData} closedFlage={this.handler} runValue={this.state.flag} oneDiv={this.state.selectedBeast2} />
 
-            <Main jsonData={jsonData} runModal={this.handler} />
+            <Main jsonData={jsonData} runModal={this.handler} fill={this.selectedItem}  />
 
         </main>
         <footer className='footer'>

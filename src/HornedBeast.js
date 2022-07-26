@@ -45,14 +45,15 @@ class HornedBeast extends React.Component {
 
     }
 
-    filldata2 = fill =>{
-        
-    }
+    getModel = () => {
+        this.props.selectedBeast(this.props.arr);
+      
+      }
    
 
    
     render() {
-        return <div className="CardDiv2" onClick={this.filldata2}>
+        return <div className="CardDiv2" onClick={this.getModel}>
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={this.props.imageUrl} onClick={this.setStatemy} width="300" height="400" 
                  />
