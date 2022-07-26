@@ -2,44 +2,59 @@
 import './App.css';
 import Header from './header';
 import Footer from "./Footer";
-import HornedBeast from "./HornedBeast";
-import React from 'react';
+import React, { useState } from 'react';
+import jsonData from './data.json';
+import Main from "./main";
+import SelectedBeast from "./SelectedBeast";
 
 
 
 
-function App() {
+class App extends React.Component {
 
-
-  const jsonData = require('./data.json');
-  console.log(jsonData);
-  const rendered = [];
-
-  jsonData.forEach((element ,index)=> {
-
-    rendered.push(<HornedBeast title={element.title} imageUrl={element.image_url} description={element.description} 
-      key={index}/>);
-
-  });
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-      </header>
-      <main className='Main'>
-        <div className='cardDiv'>
-          {
-          rendered
-        }
-        </div>
+  constructor(props) {
+    super(props);
+    this.state = {
+      flag: false,
+      selectedBeast: " ",
+     
+    }
+  }
   
-      </main>
-      <footer className='footer'>
-        <Footer value={'Hasaan'} />
-      </footer>
-    </div>
-  );
+  handler =(f)=>{
+    this.setState({
+      flag: f
+    })
+  }
+  handleSelect = (item) => {
+    this.setState({
+      selectedBeast: item
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Header />
+        </header>
+        <main className='Main' selectedBeast={this.handleSelect} showModal= {this.handler}>
+
+          <SelectedBeast 
+          runValue={this.state.flag}
+          beast={this.state.selectedBeast}
+          handleClose={this.handler}
+         />
+
+          <Main jsonData={jsonData} runModal= {this.handler} />
+
+        </main>
+        <footer className='footer'>
+          <Footer value={'Hasaan'} />
+        </footer>
+      </div>
+    );
+  }
 }
 
 export default App;

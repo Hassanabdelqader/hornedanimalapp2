@@ -1,0 +1,17 @@
+body{
+
+}
+.App {
+ background-color: grey;
+ 
+}
+main{
+ 
+}
+.cardDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding:1em ;
+
+}

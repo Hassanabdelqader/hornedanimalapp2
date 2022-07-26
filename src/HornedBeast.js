@@ -43,8 +43,6 @@ class HornedBeast extends React.Component {
         });
 
     }
-
-
     render() {
         return <div className="CardDiv2">
             <Card style={{ width: '18rem' }}>
