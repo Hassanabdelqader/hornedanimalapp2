@@ -2,44 +2,56 @@
 import './App.css';
 import Header from './header';
 import Footer from "./Footer";
-import HornedBeast from "./HornedBeast";
-import React from 'react';
+import React, { useState } from 'react';
+import jsonData from './data.json';
+import Main from "./main";
+import SelectedBeast from "./SelectedBeast";
 
 
 
 
-function App() {
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      flag: false,
+      selectedBeast: "",
+
+    }
+  }
 
 
-  const jsonData = require('./data.json');
-  console.log(jsonData);
-  const rendered = [];
+  selectedItem = (item) => {
+    this.setState({
+      selectedBeast: item
+    });
+  }
+  handler = (f) => {
+    this.setState({
+      flag: f
+    })
+  }
 
-  jsonData.forEach((element ,index)=> {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Header />
+        </header>
+        <main className='Main' selectedBeast={this.selectedItem} showModal={this.handler}>
 
-    rendered.push(<HornedBeast title={element.title} imageUrl={element.image_url} description={element.description} 
-      key={index}/>);
+            <SelectedBeast jsonData2={jsonData} closedFlage={this.handler} runValue={this.state.flag} oneDiv={this.selectedItem} />
 
-  });
+            <Main jsonData={jsonData} runModal={this.handler} />
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-      </header>
-      <main className='Main'>
-        <div className='cardDiv'>
-          {
-          rendered
-        }
-        </div>
-  
-      </main>
-      <footer className='footer'>
-        <Footer value={'Hasaan'} />
-      </footer>
-    </div>
-  );
+        </main>
+        <footer className='footer'>
+          <Footer value={'Hasaan'} />
+        </footer>
+      </div>
+    );
+  }
 }
 
 export default App;
