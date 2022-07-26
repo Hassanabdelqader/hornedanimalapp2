@@ -27,6 +27,8 @@ class SelectedBeast extends React.Component {
                  alt={this.props.oneDiv.title}
                  style= {{width : '100%', height : '100px'}}/>
                         <span>{this.props.oneDiv.title}</span>
+                        <span>{this.props.oneDiv.description}</span>
+                        
                         </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={this.handleClose}>

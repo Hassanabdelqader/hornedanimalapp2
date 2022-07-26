@@ -45,7 +45,7 @@ class HornedBeast extends React.Component {
 
     }
 
-    handleModal = () => {
+    getModel = () => {
         this.props.selectedBeast(this.props.arr);
       
       }
@@ -53,7 +53,7 @@ class HornedBeast extends React.Component {
 
    
     render() {
-        return <div className="CardDiv2" onClick={this.handleModal}>
+        return <div className="CardDiv2" onClick={this.getModel}>
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={this.props.imageUrl} onClick={this.setStatemy} width="300" height="400" 
                  />
