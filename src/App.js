@@ -16,20 +16,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       flag: false,
-      selectedBeast: " ",
-     
+      selectedBeast: "",
+
     }
   }
-  
-  handler =(f)=>{
-    this.setState({
-      flag: f
-    })
-  }
-  handleSelect = (item) => {
+
+
+  selectedItem = (item) => {
     this.setState({
       selectedBeast: item
     });
+  }
+  handler = (f) => {
+    this.setState({
+      flag: f
+    })
   }
 
   render() {
@@ -38,15 +39,11 @@ class App extends React.Component {
         <header className="App-header">
           <Header />
         </header>
-        <main className='Main' selectedBeast={this.handleSelect} showModal= {this.handler}>
+        <main className='Main' selectedBeast={this.selectedItem} showModal={this.handler}>
 
-          <SelectedBeast 
-          runValue={this.state.flag}
-          beast={this.state.selectedBeast}
-          handleClose={this.handler}
-         />
+            <SelectedBeast jsonData2={jsonData} closedFlage={this.handler} runValue={this.state.flag} oneDiv={this.selectedItem} />
 
-          <Main jsonData={jsonData} runModal= {this.handler} />
+            <Main jsonData={jsonData} runModal={this.handler} />
 
         </main>
         <footer className='footer'>

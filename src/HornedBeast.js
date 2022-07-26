@@ -24,6 +24,7 @@ class HornedBeast extends React.Component {
         this.setState({
             favorited: this.state.favorited + 1
         });
+        
     }
     getColortitle = () => {
         return this.state.titleColor;
@@ -43,10 +44,18 @@ class HornedBeast extends React.Component {
         });
 
     }
+
+    filldata2 = fill =>{
+        
+    }
+   
+
+   
     render() {
-        return <div className="CardDiv2">
+        return <div className="CardDiv2" onClick={this.filldata2}>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={this.props.imageUrl} onClick={this.setStatemy} width="300" height="400" />
+                <Card.Img variant="top" src={this.props.imageUrl} onClick={this.setStatemy} width="300" height="400" 
+                 />
                 <Card.Body>
                     <Card.Title
                         style={{
