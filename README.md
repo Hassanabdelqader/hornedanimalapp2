@@ -41,13 +41,17 @@ Finish time: 7: 39 Pm
 
 Actual time needed to complete: 9 minutes
 
-****************************************************
 Number and name of feature: Gallery Of Horns
 
 Estimate of time needed to complete: 1 Hour
 
-Start time: _____
+Start time: 10:30
 
-Finish time: _____
+Finish time: 11:50
 
-Actual time needed to complete: _____
+Actual time needed to complete: not
+
+
+
+The live link : https://fancy-muffin-b01b09.netlify.app/
+
