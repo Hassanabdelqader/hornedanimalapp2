@@ -6,7 +6,10 @@ import Modal from 'react-bootstrap/Modal';
 
 class SelectedBeast extends React.Component {
  
- 
+    constructor(props) {
+        super(props);
+       
+      }
  
     handleClose = () => {
         this.props.closedFlage(false);
@@ -17,9 +20,14 @@ class SelectedBeast extends React.Component {
            
             <Modal show={this.props.runValue} onHide={this.handleClose} animation={false}>
             <Modal.Header closeButton>
-              <Modal.Title>{'Title to be added '}</Modal.Title>
+              <Modal.Title>{this.props.oneDiv.title}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{'image to be added '}</Modal.Body>
+            <Modal.Body>  
+                <img src={this.props.oneDiv.image_url}
+                 alt={this.props.oneDiv.title}
+                 style= {{width : '100%', height : '100px'}}/>
+                        <span>{this.props.oneDiv.title}</span>
+                        </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={this.handleClose}>
                 Close
