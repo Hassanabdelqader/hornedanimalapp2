@@ -46,8 +46,19 @@ Number and name of feature: Gallery Of Horns
 
 Estimate of time needed to complete: 1 Hour
 
-Start time: _____
+Start time: 7:00 Pm
 
-Finish time: _____
+Finish time: 7:30 Pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30 Hours 
+
+****************************************************
+Number and name of feature: Filter by Numbers of Horns
+
+Estimate of time needed to complete: 30 minutes
+
+Start time:4:30 Pm
+
+Finish time: 4:45 Pm
+
+Actual time needed to complete: 15 minutes

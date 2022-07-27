@@ -25,7 +25,7 @@ class SelectedBeast extends React.Component {
             <Modal.Body>  
                 <img src={this.props.oneDiv.image_url}
                  alt={this.props.oneDiv.title}
-                 style= {{width : '100%', height : '100px'}}/>
+                 style= {{width : '100%', height : '300px'}}/>
                         <span>{this.props.oneDiv.title}</span>
                         <span>{this.props.oneDiv.description}</span>
                         
