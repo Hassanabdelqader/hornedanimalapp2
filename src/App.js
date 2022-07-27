@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import jsonData from './data.json';
 import Main from "./main";
 import SelectedBeast from "./SelectedBeast";
+import Forms from "./form";
 
 
 
@@ -18,6 +19,7 @@ class App extends React.Component {
       flag: false,
       selectedBeast2: "",
 
+      hornedSelceted : 0
     }
   }
 
@@ -33,6 +35,15 @@ class App extends React.Component {
     })
   }
 
+  itemSelect = (value) => {
+    console.log(typeof value);
+    this.setState({
+      
+      hornedSelceted : value
+    });
+    
+  }
+
   render() {
     return (
       <div className="App">
@@ -41,9 +52,13 @@ class App extends React.Component {
         </header>
         <main className='Main' showModal={this.handler}>
 
-            <SelectedBeast jsonData2={jsonData} closedFlage={this.handler} runValue={this.state.flag} oneDiv={this.state.selectedBeast2} />
+          <h1>The Beast Galaray </h1>
 
-            <Main jsonData={jsonData} runModal={this.handler} fill={this.selectedItem}  />
+          <Forms getData={this.itemSelect} />
+
+          <SelectedBeast jsonData2={jsonData} closedFlage={this.handler} runValue={this.state.flag} oneDiv={this.state.selectedBeast2} />
+
+          <Main jsonData={jsonData} runModal={this.handler} fill={this.selectedItem} selectedBeastfromForm={this.state.hornedSelceted}/>
 
         </main>
         <footer className='footer'>
