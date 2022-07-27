@@ -52,7 +52,7 @@ class App extends React.Component {
         </header>
         <main className='Main' showModal={this.handler}>
 
-          <h1>The Beast Galaray </h1>
+          <h1 className='headerChoose'>The Beast Galaray </h1>
 
           <Forms getData={this.itemSelect} />
 
